@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open-cam</title>
+    <link rel="stylesheet" href="../Style--sheet\open-cam.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body class="main__body">
+    <header class="header">
+        <nav class="nav__bar">
+            <!-- <i class="fa-solid fa-arrow-left"></i> -->
+            <a href="../index.html"><i class="fa-solid fa-arrow-left"></i></i></a>
+        </nav>
+    </header>
+    <div class="main__body-video">
+
+        <video id="videoElement" style="height:550px" autoplay>
+            <!-- <source src="movie.mp4" type="video/mp4"> -->
+        </video>
+
+    </div>
+    <!-- <button id="turnOffButton" class="camera_close-botton"><i class="fa-solid fa-xmark"></i></button>  this button can be used to close the camera(if required)-->
+
+    <script>
+
+            // Get access to the camera to show the video
+            navigator.mediaDevices.getUserMedia({ video: true })
+                .then(function (stream) {
+                    var video = document.getElementById('videoElement');    //video is inside the video variable
+                    video.srcObject = stream;
+                })
+                .catch(function (err) {
+                    console.log("Error: " + err);
+                });
+        
+
+                /*//this portion of script is to close the camera(if required)
+
+                var video = document.getElementById('videoElement');
+                var turnOffButton = document.getElementById('turnOffButton');
+                var mediaStream;
+
+                // Get access to the camera to turn off the camear
+                navigator.mediaDevices.getUserMedia({ video: true })
+                    .then(function (stream) {
+                        mediaStream = stream;
+                        video.srcObject = stream;
+                    })
+                    .catch(function (err) {
+                        console.log("Error: " + err);
+                    });
+
+                // Add click event listener to turn off the camera
+                turnOffButton.addEventListener('click', function () {
+                    if (mediaStream) {
+                        var tracks = mediaStream.getTracks();
+                        tracks.forEach(function (track) {
+                            track.stop(); // Stop each track in the media stream
+                        });
+                        video.srcObject = null; // Reset the video element source
+                    }
+                });*/
+    </script>
+</body>
+
+</html>
