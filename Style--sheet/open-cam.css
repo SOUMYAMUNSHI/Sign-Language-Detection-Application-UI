@@ -1,0 +1,61 @@
+body
+{
+    margin: 0;
+    padding: 0;
+    background-color: #34465D;
+}
+.header
+{
+    width:100%;
+    /* border: 1px solid black */
+}
+.nav__bar
+{
+    background-color: #3498DB;
+    padding:5px;
+}
+.nav__bar > a
+{
+    text-decoration: none;
+}
+.nav__bar > a > i
+{
+    font-size: 20px;
+    color:black;
+    border:1px solid black;
+    width: 50px;
+    padding:5px;
+    background-color: white;
+    border-radius: 5px;
+    text-align:center
+}
+#videoElement
+{
+    margin-top: 5px;
+    margin-left: 24%;
+    border:2px solid white;
+    border-radius: 5px;
+}
+.camera_close-botton
+{
+    text-align:center;
+    padding:10px;
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    background-color: white;
+    border:none;
+    margin-left: 50%;
+    border: 1px solid black;
+}
+.camera_close-botton > i
+{
+    text-align: center;
+    font-size: 30px;
+    color:#3498DB;
+}
+.camera_close-botton > i:hover
+{
+    color:red;
+    cursor:pointer;
+}
